@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación de la API</title>
+    <meta name="author" content="Juan Carlos Fernández">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #fff;
+        }
+        h2, h3 {
+            color: #333;
+        }
+        code {
+            background: #eee;
+            display: block;
+            padding: 5px;
+            margin: 5px 0;
+            overflow-x: auto;
+        }
+        .alert {
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Documentación de la API de Empresa</h1>
+    </header>
+
+    <div class="container">
+        <section>
+            <div class="alert">
+                <strong>Nota:</strong> Esta API no tiene persistencia de datos. Los cambios se perderán al reiniciar el servidor.
+            </div>
+
+            <h2>GET /departamentos</h2>
+            <p>Obtiene una lista de todos los departamentos.</p>
+            <code>https://api-empleados-empresa-v9t9.vercel.app/departamentos</code>
+
+            <h2>GET /empleados</h2>
+            <p>Obtiene una lista de todos los empleados de todos los departamentos.</p>
+            <code>https://api-empleados-empresa-v9t9.vercel.app/empleados</code>
+
+            <h2>POST /empleados/:id_departamento</h2>
+            <p>Añade un nuevo empleado al departamento especificado. Debe incluir un objeto empleado en el cuerpo de la solicitud.</p>
+            <code>https://api-empleados-empresa-v9t9.vercel.app/:id_departamento -H "Content-Type: application/json" -d '{"nombre_empleado": "Nombre", "apellido_empleado": "Apellido", "email_empleado": "email@example.com", "genero_empleado": "Hombre", "puesto_empleado": "desarrollador", "salario_anual_empleado": >= 24000, "seguro_empleado": true o false, "codigo_acceso": "a1a1-b2b2"}'</code>
+
+            <h2>PUT /empleados/:id_departamento/:id_empleado</h2>
+            <p>Actualiza la información de un empleado específico.</p>
+            <code>https://api-empleados-empresa-v9t9.vercel.app/:id_departamento/:id_empleado -H "Content-Type: application/json" -d '{"nombre_empleado": "Nombre", "apellido_empleado": "Apellido", "email_empleado": "email@example.com", "genero_empleado": "Hombre", "puesto_empleado": "desarrollador", "salario_anual_empleado": >= 24000, "seguro_empleado": true o false, "codigo_acceso": "a1a1-b2b2"}'</code>
+
+            <h2>DELETE /empleados/:id_departamento/:id_empleado</h2>
+            <p>Elimina un empleado específico de un departamento.</p>
+            <code>https://api-empleados-empresa-v9t9.vercel.app/:id_departamento/:id_empleado</code>
+
+            <div class="alert">
+                <strong>Nota:</strong> Puedes probar a crear una base de datos para guardar la API, y así tener persistencia de datos.
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>
